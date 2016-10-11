@@ -36,7 +36,7 @@ echo $cache->_("id_is_for_ever_string",function(){
 },60);
 ```
 
-[Click here to lend your support to: donations for more projects and make a donation at pledgie.com !](https://pledgie.com/campaigns/32720)
-![Click here to lend your support to: donations for more projects and make a donation at pledgie.com !](https://pledgie.com/campaigns/32720.png?skin_name=chrome)
+[Haga clic aquí para prestar su apoyo a: donaciones para más proyectos y hacer una donación al pledgie.com!](https://pledgie.com/campaigns/32720)
+
 
 [![Click here to lend your support to: donations for more projects and make a donation at pledgie.com !](https://pledgie.com/campaigns/32720.png?skin_name=chrome)](https://pledgie.com/campaigns/32720)
