@@ -2,8 +2,8 @@
 namespace tuadmin\cache;
 class session{
 	public $id=0;
-	public function __construct(){
-		$this->id = md5(__FILE__);
+	public function __construct($id=false){
+		$this->id = false===$id?md5(__FILE__):$id;
 		if(!isset($_SESSION[$this->id])){
 			$_SESSION[$this->id]=array();
 		}

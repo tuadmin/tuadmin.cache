@@ -27,7 +27,7 @@ class file{
 			return require($file);
 		}
 		$result=$args[0]();
-		if(file_put_contents($file,'<?php return '. var_export($result,true) .';') > 1){
+		if(file_put_contents($file,'<?php return '. var_export($result,true) .';') > 2048){
 			file_put_contents($file,php_strip_whitespace ($file));
 		}
 		return $result;
