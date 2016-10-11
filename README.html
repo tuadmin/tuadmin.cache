@@ -1019,14 +1019,29 @@ body .markdown-body
 <pre><code>-(new file($PATH_FOLDER_CACHE))-&gt;{ANY_ID}($callback,$seconds_cache)
 -(new session())-&gt;{ANY_ID}($callback,$seconds_cache)
 </code></pre>
-<p>&hellip;<br />
-<code>php
+<h2 id="cache-in-static-files"><a name="user-content-cache-in-static-files" href="#cache-in-static-files" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Cache in static files</h2>
+<p><code>php
 &lt;?php
 require 'tuadmin\cache.php';
-use tuadmin\cache;
-$cache_file = new file(__DIR__ .'/tmp');
-$cache_file-&gt;any_id_123(function(){},60)</code></p>
-<p>&hellip;<br />
-&lt;?php<br />
-class GO_Example_Model_Thing extends GO_Base_Db_ActiveRecord {<br />
-    &hellip;</p></article></body></html>
+$cache = new tuadmin\cache\file(__DIR__ .'/tmp');</code></p>
+<h2 id="cache-in-session"><a name="user-content-cache-in-session" href="#cache-in-session" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Cache in session</h2>
+<pre><code class="php">&lt;?php
+require 'tuadmin\cache.php';
+$cache = new tuadmin\cache\session(md5('var_in_session'));//alternative for name ,cache in $__SESSION[md5('var_in_session')]
+</code></pre>
+
+<h2 id="use-object-cache"><a name="user-content-use-object-cache" href="#use-object-cache" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>Use object cache</h2>
+<pre><code class="php">$cache_expire_in=3600;//seconds
+$variable_key= '123';//for use in identifier
+$var = $cache-&gt;{&quot;id_is_$variable_key&quot;}(function()use($variable_key){
+    return array(time().&quot; this is cached for var&quot;.$variable_key);
+},$cache_expire_in);
+
+echo $var[0];
+</code></pre>
+
+<h2 id="example-for-only-tuadmincachefile-and-result-is-ever-string"><a name="user-content-example-for-only-tuadmincachefile-and-result-is-ever-string" href="#example-for-only-tuadmincachefile-and-result-is-ever-string" class="headeranchor-link" aria-hidden="true"><span class="headeranchor"></span></a>example for only <em>tuadmin\cache\file</em> and result is ever string</h2>
+<pre><code class="php">echo $cache-&gt;_(&quot;id_is_for_ever_string&quot;,function(){
+    return time().&quot; this is cached for var&quot;;
+},60);
+</code></pre></article></body></html>
