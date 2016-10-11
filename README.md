@@ -35,3 +35,8 @@ echo $cache->_("id_is_for_ever_string",function(){
 	return time()." this is cached for var";
 },60);
 ```
+
+[Click here to lend your support to: donations for more projects and make a donation at pledgie.com !](https://pledgie.com/campaigns/32720)
+![Click here to lend your support to: donations for more projects and make a donation at pledgie.com !](https://pledgie.com/campaigns/32720.png?skin_name=chrome)
+
+[![Click here to lend your support to: donations for more projects and make a donation at pledgie.com !](https://pledgie.com/campaigns/32720.png?skin_name=chrome)](https://pledgie.com/campaigns/32720)
